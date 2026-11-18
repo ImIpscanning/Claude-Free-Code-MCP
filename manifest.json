@@ -1,0 +1,32 @@
+{
+  "manifest_version": "0.3",
+  "name": "claude-free-code-local",
+  "display_name": "Claude Free Code — herramientas locales",
+  "version": "1.0.0",
+  "description": "Workspace coding MCP: files, Git, approved commands, tasks, undo snapshots and local dashboard. No API key.",
+  "long_description": "Provides local coding tools in Claude Desktop, including project search, guarded file editing, Git operations, build/test commands with local approval, task checkpoints and a private browser dashboard. It does not unlock paid Claude Code or remove free tier limits.",
+  "author": { "name": "Community local project" },
+  "server": {
+    "type": "node",
+    "entry_point": "src/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/src/index.js", "${user_config.project_root}"]
+    }
+  },
+  "user_config": {
+    "project_root": {
+      "type": "directory",
+      "title": "Carpeta del proyecto",
+      "description": "Selecciona la carpeta local que Claude puede inspeccionar y editar. No selecciones toda la unidad C: ni tu carpeta personal.",
+      "required": true
+    }
+  },
+  "tools_generated": true,
+  "keywords": ["coding", "local", "git", "development", "workspace"],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["win32", "darwin", "linux"],
+    "runtimes": { "node": ">=20.0.0" }
+  }
+}

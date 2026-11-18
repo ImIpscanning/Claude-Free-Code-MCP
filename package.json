@@ -4,9 +4,7 @@
   "description": "Local, dependency-free MCP coding tools for Claude Desktop (Free or paid).",
   "type": "module",
   "private": true,
-  "engines": {
-    "node": ">=20"
-  },
+  "engines": { "node": ">=20" },
   "scripts": {
     "start": "node src/index.js",
     "panel": "node src/dashboard-link.js",
